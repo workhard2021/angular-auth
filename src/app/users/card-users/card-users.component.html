@@ -1,0 +1,13 @@
+<div class="card" style="width: 20rem;">
+    <a [routerLink]="['user/compte',item.id]">
+        <img class="card-img-top" src="/assets/image/c.jpg" alt="Card image cap">
+    </a>
+    <div class="card-body">
+      <p class="card-title"><b>Nom complet :</b> {{item.name}}</p>
+      <p class="card-text"><b>Language :</b> {{item.language}}</p>
+      <p class="card-text" *ngIf="item.role"><b>Role</b> Admin</p>
+      <p class="card-text">{{item.comment}}</p>
+      <button class="bd-danger m-2" (click)="deleteUser(item.id)"> supprimer -</button>
+      <button class="bd-success m-2"> <a class="text-muted" [routerLink]="['user/update',item.id]">Mettre à jour</a> </button>
+    </div>
+ </div>

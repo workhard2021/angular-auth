@@ -1,0 +1,15 @@
+<div class="card" style="width: 20rem;" *ngIf="user.id">
+   
+   <img class="card-img-top" src="/assets/image/c.jpg" alt="Card image cap">
+  
+    <div class="card-body">
+      <p class="card-title"><b>Nom complet :</b> {{user.name}}</p>
+      <p class="card-text"><b>Language :</b> {{user.language}}</p>
+      <p class="card-text" *ngIf="user.role"><b>Role</b> Admin</p>
+      <p class="card-text">{{user.comment}}</p>
+    <div class="d-flex justify-content-center align-items-center"  *ngIf="user.role">
+        <button class="bd-danger m-2" (click)="deleteUser(user.id)">supprimer -</button>
+        <button><a [routerLink]="['/user/update',user.id]">Modifier</a></button>
+    </div>
+    </div>
+ </div>

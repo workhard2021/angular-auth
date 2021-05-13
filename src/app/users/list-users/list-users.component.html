@@ -1,0 +1,4 @@
+<div class="d-flex justify-center align-items-center flex-wrap ">
+    <app-card-users  class="m-3" *ngFor="let value of data" [item]="value" (deleteUserEmitter)="deleteUser($event)"></app-card-users>
+    <div class="text-center text-warning w-100 py-5"  *ngIf="data.length==0">Aucun utilisateur</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center align-items-center my-5 flex-md-column">
+    <h3 class="text-center text-secondary">Mise à jour  </h3>
+    <form #up="ngForm" (submit)="update(up)" class="col-md-6 bg-secondary">
+         <p *ngIf="message" class="text-success text-center">{{message}}</p>
+         <input hidden name="id" [ngModel]="data.id">
+         <div class="form-group">
+            <label for="name">Nom complet</label>
+            <small class="form-text text-danger" *ngIf="errors.password">{{errors.password}}</small>
+            <input type="name" class="form-control" name="name" [ngModel]="data.name" id="name" placeholder="Entrez name">
+      
+          </div>
+        <div class="form-group">
+            
+          <label for="email">Email</label>
+          <small class="form-text text-danger" *ngIf="errors.password">{{errors.password}}</small>
+          <input type="email" class="form-control" name="email" [ngModel]="data.email" id="email" placeholder="Entrez email">
+    
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <small class="form-text text-danger" *ngIf="errors.password">{{errors.password}}</small>
+          <input type="password" class="form-control" name="password" [ngModel]="" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="language">Selectionnez</label>
+            <small class="form-text text-danger" *ngIf="errors.language">{{errors.language}}</small>
+            
+            <select class="form-control" name="language" [ngModel]="data.language" id="language">
+              <option value="">....</option>
+              <option *ngFor="let val of language" [value]="val">
+                           {{val}}
+              </option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="comment" name="comment">Commentaire</label>
+            <small class="form-text text-danger" *ngIf="errors.comment">{{errors.comment}}</small>
+            <textarea class="form-control" id="comment" name="comment" [ngModel]="data.comment" rows="3"></textarea>
+          </div>
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" [ngModel]="data.role" name="role" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+    </form>
+</div>
